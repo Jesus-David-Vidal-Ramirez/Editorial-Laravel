@@ -1,0 +1,59 @@
+.menu-toggle {
+    transform: translateX(28%);
+    transition: 5s;
+    position: absolute;
+    height: 100 vh;
+}
+
+.menu {
+    /* transform: translateX(28%); */
+    display: flex;
+    transition: 1s;
+    display: flex;
+    background-color: #ff6347;
+    justify-content: end;
+    height: 100 vh;
+    z-index: 3;
+}
+
+.menu>div {
+    background-color: aquamarine;
+    position: fixed;
+    height: 100vh
+}
+
+.navegacion {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+}
+
+.navegacion>ul {
+    margin-top: 50px
+}
+
+.buttonMenu {
+    z-index: 10;
+    position: absolute
+}
+
+.buttonMenu>button {
+    position: fixed;
+}
+
+.contenido {
+    padding: 20px;
+    /* z-index: 10; */
+}
+
+.parrafo {
+    background-color: red;
+    color: green;
+}
+
+
+/* .antialiased {
+    background-color: red;
+} */
