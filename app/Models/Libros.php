@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+// use Illuminate\Database\Query\Grammars\MySqlGrammar;
 use Illuminate\Http\Request;
 
 class Libros extends Model
@@ -32,41 +32,71 @@ class Libros extends Model
         return collect($libros);
     }
 
-    public function SelectOne($Id_Libro){
+    //Buscar libro Especifico
+    // public function SelectOne($Id_Libro){
 
-        $libroABuscar = DB::table('libros')->where('Id_Libro', $Id_Libro)->get();
-        echo $libroABuscar;
+    //     $libroABuscar = DB::table('libros')->where('Id_Libro', $Id_Libro)->get();
+    //     echo $libroABuscar;
 
-        return $libroABuscar;
+    //     return $libroABuscar;
+    // }
 
+    public function CreateLibro(Request $libro){
+
+        // echo $libro;
+        // echo $libro->autor;
+        // echo $libro->nombre;
+        // echo $libro->Id_Libro;
+        
+        $libros = new Libros();
+
+        $libros = Libros::create($libro->all()); 
+        // $libros->id_libro = $libro['id_libro'];
+        // $libros->autor = $libro['autor'];
+        // $libros->nombre = $libro['nombre'];
+        // $libros->editorial = 'N/A';
+        // $libro['editorial'];
+        // echo $libros->autor;
+        // echo $libros->id_libro;
+        // echo $libros->nombre;
+        //////// validacion
+         $libros->save();
+        
+        // echo $libroCreado;
+
+        // $libroCreado = DB::table('libros', $libros)->save();
+        
+        // echo $libroCreado;
+
+        // echo 'Creado ' . $libroCreado;
+        return $libros;
     }
 
-    public function CreateLibro(Libros $libro){
+    // public function EditLibro($Id_Libro){
 
-        echo $libro;
+    //     $libroAEditar = DB::table('libro')->where('Id_Libro', $Id_Libro)->get();
+    //     echo $libroAEditar;
 
-        $libroCreado = DB::table('libros', $libro)->create();
-
-        echo 'Creado ' . $libroCreado;
-        return $libroCreado;
-    }
-
-    public function EditLibro($Id_Libro){
-        $libroAEditar = DB::table('libro')->where('Id_Libro', $Id_Libro)->get();
-        echo $libroAEditar;
-
-        return $libroAEditar;
-    }
+    //     return $libroAEditar;
+    // }
 
 
     public function UpdateLibro(Request $request, Libros $libro){
         
+         $libro->Id_Libro = $request['id_libro'];
+         $libro->nombre = $request['nombre'];
+         $libro->autor = $request['autor'];
+
+         $libro->save();
+        
+         return $libro;
+         
         // $libroActualizado = DB::table('libros')->update($libro);
     }
 
-    public function DestroyLibro($Id_Libro){
-
-        $libroEliminado = DB::table('libro')->where('id_libro', $Id_Libro);
+    public function DestroyLibro($id){
+        
+        $libroEliminado = DB::table('libros')->where('id', $id)->delete();
        
         return $libroEliminado;
     }

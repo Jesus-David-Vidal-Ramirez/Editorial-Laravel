@@ -35,12 +35,12 @@ Route::get('/',  [App\Http\Controllers\LibrosController::class, 'index']);
 Route::get('libros', [App\Http\Controllers\LibrosController::class, 'index'])->name('libros.index');
 Route::get('libros/create', [App\Http\Controllers\LibrosController::class, 'create'])->name('libros.create');
 Route::post('libros', [App\Http\Controllers\LibrosController::class, 'store'])->name('libros.store');
-Route::get('libros', [App\Http\Controllers\LibrosController::class, 'show'])->name('libros.show');
-Route::get('libros/{id}/edit', [App\Http\Controllers\LibrosController::class, 'edit'])->name('libros.edit');
-Route::put('libros/{id}', [App\Http\Controllers\LibrosController::class, 'update'])->name('libros.update');
-Route::delete('libros/{id}/delete', [App\Http\Controllers\LibrosController::class, 'delete'])->name('libros.delete');
+Route::get('libros/{libros}', [App\Http\Controllers\LibrosController::class, 'show'])->name('libros.show');
+Route::get('libros/{libros}/edit', [App\Http\Controllers\LibrosController::class, 'edit'])->name('libros.edit');
+Route::put('libros/{libros}', [App\Http\Controllers\LibrosController::class, 'update'])->name('libros.update');
+Route::delete('libros/{libros}/destroy', [App\Http\Controllers\LibrosController::class, 'destroy'])->name('libros.destroy');
 
-
+// Route::resource('libros',[\App\Http\Controllers\LibrosController::class])->names('libros');
 
 // Route::resource('libros', [App\Http\Controllers\LibrosController::class] )->names('libros');
 Auth::routes();

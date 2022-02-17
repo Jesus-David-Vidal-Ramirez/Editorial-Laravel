@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Libros;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CreateLibrosRequest;
+use Illuminate\Auth\Events\Validated;
 
 class LibrosController extends Controller
 {
@@ -16,13 +18,11 @@ class LibrosController extends Controller
     
     public function index()
     {
-        //
+       
         $libros = new Libros();
         $misLibros = $libros->SelectAll();
 
         return view('libros.index', compact('misLibros'));
-        
-
     }
 
     /**
@@ -42,13 +42,21 @@ class LibrosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateLibrosRequest $request)
     {
         //
-        echo 'Acabas de crear un libro';
-        echo $request['autor'];
-        echo $request['nombre'];
-        echo $request['Id_Libro'];
+        // echo 'Acabas de crear un libro';
+        $libro = new Libros();
+        // $camposrequerido = $request->validate(
+        //     [
+        //         'name' => 'mo',
+        //     ]
+        // );
+      
+        $LibroCreado = $libro->CreateLibro($request);
+        
+        
+        return redirect()->route('libros.show', $LibroCreado);
     }
 
     /**
@@ -60,8 +68,8 @@ class LibrosController extends Controller
     public function show(Libros $libros)
     {
         //
-        echo 'Acabas de buscar un libro ' ;
-        echo '<br>' . $libros['libroABuscar'];
+        // echo 'Acabas de buscar un libro <br>' ;
+       return view('libros.show', compact('libros'));
     }
 
     /**
@@ -70,11 +78,11 @@ class LibrosController extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function edit($Id_Libro)
+    public function edit(Libros $libros)
     {
-        //
-        
-       return view('libros.edit', compact('Id_Libro'));
+        // echo $libros;
+        // echo 'edit';
+       return view('libros.edit', compact('libros'));
     }
 
     /**
@@ -86,13 +94,11 @@ class LibrosController extends Controller
      */
     public function update(Request $request, Libros $libros)
     {
-        //
-        echo $request['autor'] . '<br>';
-        echo $request['nombre']. '<br>';
-        echo $request['Id_Libro']. '<br>';
-        echo 'update';
-        // return $this->show($request);
-        return $this->index();
+        $UpdateLibro = new Libros();
+
+        $libro = $UpdateLibro->UpdateLibro($request, $libros);
+        
+        return redirect()->route('libros.show' , $libro);
     }
 
     /**
@@ -103,6 +109,10 @@ class LibrosController extends Controller
      */
     public function destroy(Libros $libros)
     {
-        //
+        $EliminarLibro = new Libros();
+
+        $EliminarLibro->DestroyLibro($libros->id);
+        
+        return redirect()->route('libros.index');
     }
 }

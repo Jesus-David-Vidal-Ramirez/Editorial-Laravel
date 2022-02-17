@@ -1,15 +1,15 @@
  
-        
          Vas a editar un libro
-        {{ $Id_Libro}}
+        {{-- {{ $libros}} --}}
 
-        <form method="post" action="{{ route('libros.update', $Id_Libro) }}">
+        <form method="post" action="{{ route('libros.update', $libros) }}">
             @csrf
+            @method('PUT')
             <label>isbn </label>
-            <input name='Id_Libro' type="text" value='{{$Id_Libro}}'>
+            <input name='id_libro' type="text" value='{{$libros->Id_Libro}}'>
             <label>Nombre </label>
-            <input name='nombre' type="text">
+            <input name='nombre' type="text" value="{{$libros->nombre}}">
             <label>Autor </label>
-            <input name='autor' type="text">
-            <input name='crearLibro' type="submit" value="Registrar">
+            <input name='autor' type="text" value="{{$libros->autor}}">
+            <input name='crearLibro' type="submit" value="Editar">
         </form>
