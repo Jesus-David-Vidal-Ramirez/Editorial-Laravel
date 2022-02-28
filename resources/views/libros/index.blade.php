@@ -16,7 +16,13 @@ Estoy en libros
     {{ $item->descuento}}
     {{ $item->created_at}}
     {{ $item->updated_at}}
-    <a href="{{ route('libros.show', $item->id) }}">Buscar libro</a>
+    <br/>
+    <a href="#">Reservar libro</a><br/>
+    <a href="#">Comprar libro</a><br/>
+
+    <a href="{{ route('libros.show', $item->id) }}">Ver Mas Informacion Del libro</a><br/>
+
+    <a href="{{ route('calificacion.show', $item->id) }}">Calificacion libro</a>
     <br>
 @endforeach
 
@@ -36,5 +42,14 @@ Estoy en libros
 <h3>Edit del libro &#10004;</h3>
 
 
-<h3>Eliminar Un Libro</h3>
+<h3>Eliminar Un Libro  &#10004;</h3>
+
+
+
+<h3>Mostrar todas las calificaciones &#10004;</h3>
+<h3>Mostrar las calificaciones de un libro &#10004;</h3>
+<h3>Registrar calificacion de un libro &#10004;</h3>
+
+
+
 

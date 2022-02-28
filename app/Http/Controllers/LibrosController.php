@@ -68,6 +68,7 @@ class LibrosController extends Controller
     public function show(Libros $libros)
     {
         //
+        // echo $libros . 'mi libro';
         // echo 'Acabas de buscar un libro <br>' ;
        return view('libros.show', compact('libros'));
     }
