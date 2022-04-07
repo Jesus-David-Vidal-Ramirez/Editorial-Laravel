@@ -53,15 +53,11 @@
                 @yield('contenido')
                 
             </section>
-
+            <hr>
+            
             <footer class="footer">
                 Footer
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique voluptas laudantium fugit ut explicabo officiis. Temporibus, autem, commodi asperiores natus, saepe dignissimos dolorum nihil sit accusantium repellendus odio. Praesentium?
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio minus dolorem saepe ipsum hic itaque molestias quasi, laboriosam autem, at temporibus similique fuga dolore perferendis deleniti molestiae eius nam officia!
-                Facere sequi nesciunt illum in. Mollitia, ipsum ab incidunt cum deserunt omnis nulla, dolorem soluta ut quasi at eius. Alias, non fugiat mollitia quos minima cum earum id. Repellendus, reprehenderit!
-                Impedit, ea aliquid ipsum accusamus ipsam soluta praesentium consequatur enim mollitia ipsa adipisci rem nulla ullam dolor voluptates quia, obcaecati suscipit voluptatem quod. Vero nam eveniet exercitationem nulla enim consequatur.
-                Iusto maiores at ut doloremque repellendus ullam porro ipsa sint dolore quod odio quidem quo sit natus laboriosam, vitae cum beatae vel odit molestiae? Numquam, eos? Pariatur adipisci deserunt fuga.
-                Voluptatibus, nam inventore corrupti sint consequuntur fugit, ipsum veritatis adipisci rem officiis omnis nobis minima minus consequatur nostrum rerum. Praesentium sint, totam id ratione aliquam quo recusandae neque repellendus officia.
+                
             </footer>
         </main>
     </div>
