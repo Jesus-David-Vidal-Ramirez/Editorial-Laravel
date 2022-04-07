@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class compras extends Model
 {
     use HasFactory;
+    protected $table = 'compras';
+    protected $fillable = [];
+
+    
+
 }

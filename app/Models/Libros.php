@@ -33,13 +33,13 @@ class Libros extends Model
     }
 
     //Buscar libro Especifico
-    // public function SelectOne($Id_Libro){
+    public function SelectOne($id){
 
-    //     $libroABuscar = DB::table('libros')->where('Id_Libro', $Id_Libro)->get();
-    //     echo $libroABuscar;
+        $libroABuscar = DB::table('libros')->where('id', $id)->get();
 
-    //     return $libroABuscar;
-    // }
+
+        return $libroABuscar;
+    }
 
     public function CreateLibro(Request $libro){
 

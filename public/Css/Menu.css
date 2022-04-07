@@ -1,59 +1,57 @@
-.menu-toggle {
-    transform: translateX(28%);
-    transition: 5s;
-    position: absolute;
-    height: 100 vh;
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-.menu {
-    /* transform: translateX(28%); */
+.app {
     display: flex;
-    transition: 1s;
-    display: flex;
-    background-color: #ff6347;
-    justify-content: end;
-    height: 100 vh;
+    flex-direction: row-reverse;
+    height: 100vh;
+}
+
+.header {
+    background-color: aqua;
+    width: 20vw;
+    height: 100vh;
+    position: sticky;
+    overflow-y: auto;
+    z-index: 0;
+    transition: .9s;
+}
+
+.icon-menu {
+    background-color: rgba(68, 68, 68, 0.3);
+    position: fixed;
+    left: 1%;
+    top: 2%;
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
     z-index: 3;
 }
 
-.menu>div {
-    background-color: aquamarine;
-    position: fixed;
-    height: 100vh
+.header-oculto {
+    width: 0vw;
+    transition: 1.2s;
 }
 
-.navegacion {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* position: absolute; */
-}
-
-.navegacion>ul {
-    margin-top: 50px
-}
-
-.buttonMenu {
-    z-index: 10;
-    position: absolute
-}
-
-.buttonMenu>button {
-    position: fixed;
+.main {
+    background-color: antiquewhite;
+    width: 100vw;
+    position: relative;
+    border: 2px solid red;
+    flex-wrap: nowrap;
+    overflow-y: auto;
 }
 
 .contenido {
-    padding: 20px;
-    /* z-index: 10; */
+    margin-bottom: 100px;
 }
 
-.parrafo {
-    background-color: red;
-    color: green;
+.footer {
+    background-color: black;
+    color: white;
+    /* position: absolute; */
+    /* top: 90vh; */
 }
-
-
-/* .antialiased {
-    background-color: red;
-} */

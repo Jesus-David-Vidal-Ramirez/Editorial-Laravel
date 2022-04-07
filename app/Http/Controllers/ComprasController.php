@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\compras;
+use App\Models\Libros;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ComprasController extends Controller
 {
     /**
@@ -12,9 +13,15 @@ class ComprasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($libro)
     {
-        //
+        
+        $libros = new Libros();
+        $libro = $libros->SelectOne($libro);
+        
+        
+
+        return view('compras.index', compact('libro'));
     }
 
     /**

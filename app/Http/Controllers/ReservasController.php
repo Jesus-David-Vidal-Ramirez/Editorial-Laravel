@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Libros;
 use App\Models\reservas;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ReservasController extends Controller
 {
     /**
@@ -12,9 +13,18 @@ class ReservasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index($usuario)
+    {   
+        
+        $reservas = new reservas();
+        $reservado = $reservas->reservarAll($usuario);
+        
+        if($reservado->isEmpty()){
+            //Retornar notificacion diciendo que no hay nada reservado
+            return back();
+        }
+        
+        return view('reservas.index', compact('reservado'));
     }
 
     /**
@@ -22,9 +32,14 @@ class ReservasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($libro)
     {
         //
+        $reservas = new reservas();
+        $libro = $reservas->reservarLibro($libro);
+        
+        
+        return view('reservas.create', compact('libro'));
     }
 
     /**
@@ -35,7 +50,24 @@ class ReservasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Falta el requestForm
+        //Y pasar esto para el modelo
+
+        
+        $id_usuario = $request['id_usuario'];
+        $id_libro = $request['id_libro'];
+        $cantidad = $request['cantidad'];
+        $total   = $request['total'];
+
+        $reservas = new reservas();
+
+        $reservas->id_usuario = $id_usuario;
+        $reservas->id_libro = $id_libro;
+        $reservas->cantidad = $cantidad;
+        $reservas->total = $total;
+        
+        $reservas->save();
+        
     }
 
     /**
@@ -80,6 +112,11 @@ class ReservasController extends Controller
      */
     public function destroy(reservas $reservas)
     {
-        //
+        
+        //Pasarla al modelo 
+        //returnar todas las reservas de nuevo
+        // return redirect()->route('libros.index');
+        echo $reservas;
+        echo $reservaEliminada = DB::table('reservas')->where('id_usuario', $reservas->id)->get();
     }
 }

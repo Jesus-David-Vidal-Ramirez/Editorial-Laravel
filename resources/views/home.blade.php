@@ -1,70 +1,47 @@
 @extends('layouts.app')
 
-@section('content')
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+@section('contenido')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<section class="container">
+    <div class="my-5">
+        H1
+    </div>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+    
+    <div class="card-group">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
         </div>
     </div>
-</div> --}}
+</div>
 
+</section>
 
-<div id='contenido' >
-    <div style="background-color:antiquewhite;" class='contenido'>
-       
-        contenido
-       
-        <p >
-            Mis libros
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nam ducimus architecto. Repellat nesciunt, vitae iure adipisci dolores autem laborum rerum sit corrupti similique cumque asperiores eius inventore repellendus optio.
-        </p>
-    </div>
-  </div>
 @endsection
+
