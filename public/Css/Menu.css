@@ -57,3 +57,22 @@ body {
     /* position: absolute; */
     /* top: 90vh; */
 }
+
+
+/* libros */
+
+
+/* descuento */
+
+.descuento {
+    position: absolute;
+    left: 80%;
+    /* top: 10px; */
+    border: 1px solid white;
+    width: 0px;
+    height: 80px;
+    border-left: 20px solid red;
+    border-right: 20px solid blue;
+    border-bottom: 30px solid yellow;
+    display: flex;
+}

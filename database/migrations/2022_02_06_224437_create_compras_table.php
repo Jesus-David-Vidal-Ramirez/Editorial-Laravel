@@ -15,9 +15,9 @@ class CreateComprasTable extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('Id_Usuario');
-            $table->unsignedBigInteger('Id_Libro');
-            $table->foreign('Id_Usuario')->references('id')->on('users')->onDelete("w")->onUpdate("cascade");
+            $table->unsignedBigInteger('Id_Usuario')->nullable();
+            $table->unsignedBigInteger('Id_Libro')->nullable();
+            $table->foreign('Id_Usuario')->references('id')->on('users')->onDelete("cascade")->onUpdate("cascade");
             $table->foreign('Id_Libro')->references('id')->on('libros')->onDelete("cascade")->onUpdate("cascade");
             $table->integer('cantidad');
             $table->integer('total');
