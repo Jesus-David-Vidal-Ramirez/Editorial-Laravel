@@ -1,13 +1,21 @@
+@extends('layouts.app')
 
-<h1>La compra</h1>
+@section('title')
+    Comprar Libro
+@endsection
 
-<h5>El libro a comprar</h5>
+@section('contenido')
+<h1>Comprar Libro</h1>
+@foreach($libro as $libroAcomprar)
+
+@endforeach
+<h5>{{$libroAcomprar->nombre }}</h5>
 
 {{ $libro }}
 
 <form>
     <div>
-        <label>Valor: $ 15000</label>
+        <label>Valor: $ {{$libroAcomprar->precio}}</label>
     </div>
     <div>
         <label>Cantidad</label>
@@ -31,6 +39,11 @@
       <div id="paypal-button-container"></div>
     </div>
   </div>
+
+
+  @endsection  
+
+
 <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script>
   function initPayPalButton() {

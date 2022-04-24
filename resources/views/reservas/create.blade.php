@@ -1,3 +1,10 @@
+@extends('layouts.app')
+
+@section('title')
+    Reservar libro
+@endsection
+
+@section('contenido')
 <h2>Reservar este libro</h2>
 
 {{ $libro }}
@@ -16,3 +23,5 @@
     <input type="submit" value="Guardar">
 
 </form>
+
+@endsection

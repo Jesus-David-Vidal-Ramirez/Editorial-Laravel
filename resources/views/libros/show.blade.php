@@ -1,9 +1,28 @@
 @extends('layouts.app')
+
+@section('title')
+  Libro {{ $libros->nombre }}
+@endsection
+
+@section('contenido')
+
+
+<div class="container">
+  <h2>{{ $libros->nombre }}</h2>
+  <figure>
+    <img src="{{asset('Imagenes/'.$libros->imagen)}}" alt="{{$libros->imagen }}">
+  </figure>
+  <p>Edicion de este libro solo admin</p>
+  <a href="{{ route('libros.edit', $libros )}}">Editar el libro </a>
+
+
+  
+</div>
+
 Informacion completa y ordenada del libro
 {{ $libros }}
 
-<p>Edicion de este libro solo admin</p>
-<a href="{{ route('libros.edit', $libros )}}">Editar el libro </a>
+
 
 <p>Vas a eliminar este libro?</p>
 
@@ -61,3 +80,6 @@ Informacion completa y ordenada del libro
     <h6>Ver calificaciones del libro</h6>
     <a href="{{ route('calificacion.show', $libros )}}">Calificaciones de este libro </a>
   </div>
+
+
+  @endsection
