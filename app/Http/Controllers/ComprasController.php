@@ -18,10 +18,8 @@ class ComprasController extends Controller
         
         $libros = new Libros();
         $libro = $libros->SelectOne($libro);
-        
-        
 
-        return view('compras.index', compact('libro'));
+        return view('compras.index', compact('libro') );
     }
 
     /**

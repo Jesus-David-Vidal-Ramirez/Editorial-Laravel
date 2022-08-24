@@ -1,21 +1,30 @@
-<h3>Reservas</h3>
+@extends('layouts.app')
 
+@section('title')
+    Mis Reservas
+@endsection
 
+@section('contenido')
 
-@foreach ($reservado as $reservas)
-    {{ $reservas->nombre }}
-    {{ $reservas->Id_Libro }}
-    {{ $reservas->id }}
-    <a href="{{route('compras.index', $reservas->id ) }}">Comprar libro</a><br/>
+    <h3>Mis Reservas</h3>
 
-    <form action="{{ route('reservas.destroy', $reservas->Id_Libro )}}" method="post">
-        @csrf
-        @method('delete')
-        <input class="btn btn-danger" value="Eliminar" type="submit">
-      </form>
-    <br>
-    
-@endforeach
+    @foreach ($reservado as $reservas)
+        {{ $reservas->nombre }}
+        {{ $reservas->Id_Libro }}
+        {{ $reservas->id }}
+        <a href="{{route('compras.index', $reservas->id ) }}">Comprar libro</a><br/>
 
-<h5>Comprar</h5>
+        {{-- NO sir ve el eliminar --}}
+        <form action="{{ route('reservas.destroy', $reservas->Id_Libro )}}" method="post">
+            @csrf
+            @method('delete')
+            <input class="btn btn-danger" value="Eliminar" type="submit">
+        </form>
+        <br>
+        
+    @endforeach
+
+    <h5>Comprar</h5>
+
+@endsection
 

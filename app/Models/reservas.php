@@ -32,7 +32,7 @@ class reservas extends Model
         //                 })
         //                 ->get();
         
-        echo $reservado;
+        // echo $reservado;
         return $reservado;
     }
 

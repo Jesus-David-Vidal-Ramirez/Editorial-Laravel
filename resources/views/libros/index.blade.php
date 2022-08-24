@@ -1,10 +1,11 @@
 @extends('layouts.app')
-
+@livewireStyles
 @section('title')
     Libros
 @endsection
 
 @section('contenido')
+<livewire:counter/> 
 <div class="my-5">
     Libros
 </div>
@@ -39,13 +40,13 @@
                     </div>
                     
                     <div class="bg-light w-100 p-2 justify-content-center align-items-center d-flex">
-                        <div class="div">
+                        <div class="div ">
 
-                            <a href="{{route('reservas.create', $item->id) }}" class="navbar-brand text-light badge bg-warning w-100">Reservar libro</a>
+                            <a href="{{route('reservas.create', $item->id) }}" class="navbar-brand text-light badge bg-warning w-100 m-2 p-2">Reservar libro</a>
                              
-                            <a href="{{route('compras.index', $item->id) }}" class="navbar-brand text-light badge bg-danger w-100">Comprar libro</a>
+                            <a href="{{route('compras.index', $item->id) }}" class="navbar-brand text-light badge bg-danger w-100 m-2 p-2">Comprar libro</a>
                             
-                            <a href="{{ route('calificacion.show', $item->id) }}" class="navbar-brand text-light badge bg-info w-100">Calificacion libro</a>
+                            <a href="{{ route('calificacion.show', $item->id) }}" class="navbar-brand text-light badge bg-info w-100 m-2 p-2">Calificacion libro</a>
                         </div>
                     </div>
 
@@ -135,6 +136,7 @@
 
 </h3>
 
-
+@livewireScripts
 @endsection
 
+    
