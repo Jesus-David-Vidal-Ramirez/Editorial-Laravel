@@ -1,10 +1,11 @@
 @extends('layouts.app')
-
+@livewireStyles
 @section('title')
     Libros
 @endsection
 
 @section('contenido')
+<livewire:counter/> 
 <div class="my-5">
     Libros
 </div>
@@ -135,7 +136,7 @@
 
 </h3>
 
-
+@livewireScripts
 @endsection
 
     
